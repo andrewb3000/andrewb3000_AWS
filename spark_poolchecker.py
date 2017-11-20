@@ -6,12 +6,11 @@ import json
 import urllib2
 import re
 import socket
-import os
-import sys
 
-
-PROXY_LIST = { 
-    'test': [1,2,9243,1736]
+ACCESS_TOKEN = "ZZZ"
+ROOM_ID = "YYY"
+PROXY_LIST = {
+    'test': [1, 2, 9243, 1736]
 }
 
 
@@ -19,21 +18,13 @@ def _url(path):
     return 'https://api.ciscospark.com/v1/' + path
 
 
-#correct syntax of authentication token:
+# correct syntax of authentication token:
 def fix_at(at):
     at_prefix = 'Bearer '
     if not re.match(at_prefix, at):
         return 'Bearer ' + at
     else:
         return at
-
-
-def findroomidbyname(at, roomName):
-    room_dict = get_rooms(fix_at(at))
-    for room in room_dict['items']:
-        #print (room['title'])
-        if room['title'] == roomName:
-            return room['id']
 
 
 def post_message(at, roomId, message, toPersonId='', toPersonEmail=''):
@@ -51,7 +42,7 @@ def post_message(at, roomId, message, toPersonId='', toPersonEmail=''):
     try:
         response = urllib2.urlopen(req)
         response_dict = json.loads(response.read())
-        return responce_dict
+        return response_dict
     except Exception as e:
         if hasattr(e, 'reason'):
             return 'We failed to reach a server. Reason: ', e.reason
@@ -81,7 +72,7 @@ def ping_pools(prxlist, dc, roomId):
     if dc not in list(prxlist):
         err_msg = "%s is not in list" % dc
         post_message(ACCESS_TOKEN, roomId, err_msg)
-        #print err_msg
+        # print err_msg
         return err_msg
     else:
         proxy_list = prxlist[dc]
@@ -117,7 +108,7 @@ def lambda_handler(event, context):
     print event
     if sender != "poolcheck@sparkbot.io":
         try:
-            if get_msg_details(ACCESS_TOKEN, msgId) == False:
+            if get_msg_details(ACCESS_TOKEN, msgId) is False:
                 raise Exception('Could not get message details')
             else:
                 site = get_msg_details(ACCESS_TOKEN, msgId)['text'].split()
@@ -136,3 +127,13 @@ def lambda_handler(event, context):
     else:
         print "It's my own message, ignore"
         return "Request ignored"
+
+
+# UNIT TESTS
+def test_url():
+    assert _url('test_path') == 'https://api.ciscospark.com/v1/test_path'
+
+
+def test_fix_at():
+    assert fix_at('test_token') == 'Bearer test_token'
+    assert fix_at('Bearer test_token') == 'Bearer test_token'

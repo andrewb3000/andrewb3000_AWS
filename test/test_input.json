@@ -1,0 +1,26 @@
+{
+  "status": "active",
+  "resource": "messages",
+  "name": "ABBot Webhook",
+  "created": "2017-05-25T15:15:46.443Z",
+  "appId": "Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh",
+  "id": "Y2lzY29zcGFyazovL3VzL1dFQkhPT0svMGQ3NDQ5NzEtNDhhOS00MmEzLThhMWUtM2QwN2ZjMDQ1ZjYy",
+  "filter": "roomId=Y2lzY29zcGFyazovL3VzL1JPT00vNmQ5YTNjYjAtNDEzYi0xMWU3LWE3ZTQtMzM3MDQ1NTEwYzJl",
+  "orgId": "Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY",
+  "createdBy": "Y2lzY29zcGFyazovL3VzL1BFT1BMRS8wOTFkNmVkYy03YTIzLTQxYWUtOGM3MC1hMTU5MmFkZmZmYmM",
+  "targetUrl": "https://425dxcw7zc.execute-api.eu-west-2.amazonaws.com/prod/sparkbot",
+  "ownedBy": "creator",
+  "actorId": "Y2lzY29zcGFyazovL3VzL1BFT1BMRS8yZGY0NmJlYi1iMTA3LTQwYzgtOTg4YS1iNTIwOWVlZmMyZDM",
+  "data": {
+    "roomType": "group",
+    "created": "2017-11-01T15:29:14.670Z",
+    "personId": "Y2lzY29zcGFyazovL3VzL1BFT1BMRS8yZGY0NmJlYi1iMTA3LTQwYzgtOTg4YS1iNTIwOWVlZmMyZDM",
+    "personEmail": "abryndza@cisco.com",
+    "mentionedPeople": [
+      "Y2lzY29zcGFyazovL3VzL1BFT1BMRS8wOTFkNmVkYy03YTIzLTQxYWUtOGM3MC1hMTU5MmFkZmZmYmM"
+    ],
+    "roomId": "Y2lzY29zcGFyazovL3VzL1JPT00vNmQ5YTNjYjAtNDEzYi0xMWU3LWE3ZTQtMzM3MDQ1NTEwYzJl",
+    "id": "Y2lzY29zcGFyazovL3VzL01FU1NBR0UvNmFlNmZjZTAtYmYxOS0xMWU3LWE0ZWQtZTc4Y2I0YTI1NjM3"
+  },
+  "event": "created"
+}

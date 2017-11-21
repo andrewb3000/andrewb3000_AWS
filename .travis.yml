@@ -5,6 +5,6 @@ python:
 install:
   pip install -r requirements.txt
 script:
-  py.test --pyargs spark_poolchecker.py
+  py.test
 before_script:
   export PYTHONPATH=$PYTHONPATH:$(pwd)

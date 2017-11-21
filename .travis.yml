@@ -8,3 +8,13 @@ script:
   py.test
 before_script:
   export PYTHONPATH=$PYTHONPATH:$(pwd)
+deploy:
+  provider: lambda
+  function_name: "travis_lambda_test"
+  region: "us-west-2"
+  role: "arn:aws:iam::0123456789012:role/lambda_basic_execution"
+  runtime: "python2.7"
+  handler_name: "handler"
+  module_name: poolchecker
+  access_key_id: "AKIAJ3LFESVJHYRJKOUA"
+  secret_access_key: "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"

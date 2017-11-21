@@ -16,5 +16,3 @@ deploy:
   runtime: "python2.7"
   handler_name: "handler"
   module_name: poolchecker
-  access_key_id: "AKIAJ3LFESVJHYRJKOUA"
-  secret_access_key: "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"

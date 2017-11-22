@@ -1,18 +1,17 @@
----
 language: python
 python:
-  - "2.7"
-install:
-  pip install -r requirements.txt
-script:
-  py.test
-before_script:
-  export PYTHONPATH=$PYTHONPATH:$(pwd)
+- '2.7'
+install: pip install -r requirements.txt
+script: py.test
+before_script: export PYTHONPATH=$PYTHONPATH:$(pwd)
 deploy:
   provider: lambda
-  function_name: "travis_lambda_test"
-  region: "us-west-2"
-  role: "arn:aws:iam::0123456789012:role/lambda_basic_execution"
-  runtime: "python2.7"
-  handler_name: "handler"
+  function_name: travis_lambda_test
+  region: eu-west-2
+  role: arn:aws:iam::0123456789012:role/lambda_basic_execution
+  runtime: python2.7
+  handler_name: handler
   module_name: poolchecker
+  access_key_id: AKIAJO5MGCLRPAM4OVXA
+  secret_access_key_id:
+    secure: AwDBh5MIwpizP4qQkJm4+OSFeSQM+9FTZyUxHF82XybwfCOfVrIDFqbUqUWtZzclg9Efm9eKnPrOG7m+g4yYJPCmSlEZnT406LU212foIHY8O+PRxxUvi7wl56W8htkjo0VTzEWLI9fXvuuXkkUcjsb/E42AABEeSN3ItpXQpym7yx+Lf54NDXNNG9MB5Cj6lOfRYO5p55Mdrc7+sF8nkO/q2rZ5WxAEqeT8F5YTjf3j/3L2kkofM9i1MP3/+gL4ncUXQHxKalTJXkcM09mdzlD/1ciYG03VrDSHfp076jhCFO6rUAE7S9HkSB9i9+8l8J7bQDlG+LjJ/OmkI00NGGSIrdPM+RE1pRCllXpQy6aG+8P7qmSXoh9+TWfLxtnNlS09uW5weLq/HHhmxVhl8ebtOG+3LkGieO4x+/k9sfjaXbLf/LwGCPq9BS0cJ01AqYudCWOPz3vka5zcnDyiQku8sRROZ4eSND631l0yMA83I3cCEnevb+yzmRpeSRrY9KbVADJpt96xkkdPMM0jihE8RdG/1L1rpIs7ufLOTjj4Rq8l3zb5FMjdlYGZLicSiuVvRQbHs2JSAjMwX54eZEoWA8lUoWx73D0AWP5BoLiRBErj26Ay22d1dZxZZiui2GGazp0vVwa/6i9C5lgT2c2DQt4OriX0rjvZ+Hc9CJU=
